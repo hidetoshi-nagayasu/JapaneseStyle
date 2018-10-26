@@ -11,7 +11,6 @@ $(function() {
 		$(".lightbox").fadeIn(300);
     $(".lightbox").append("<img src='" + $(this).children("img").attr("src") + "' alt='" + $(this).children("img").attr("alt") + "' />");
     $(".filter").css("background-image", "url(" + $(this).children("img").attr("src") + ")");
-    /*$(".title").append("<h1>" + $(this).attr("alt") + "</h1>");*/
 		$("html").css("overflow", "hidden");
 		
 		let currentSrc = $(this).children("img").attr("src");
@@ -86,6 +85,16 @@ $(function() {
     const position = target.offset().top;
     $("html, body").animate({scrollTop:position}, speed, "swing");
     return false;
-  })
+  });
+
+  // ギャラリーエリアに来たらアニメーション表示
+  $(window).scroll(function () {
+    const $galleryContents = $('.img-parent');
+    if ($(this).scrollTop() > 60) {
+      $galleryContents.each(function(i) {
+        $(this).delay(100 * i).fadeIn(100);
+      });
+    }
+});
 
 });

@@ -7,8 +7,6 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Lato', sans-serif;
-	/* 'M+ C Type-1 (basic latin) Thin',
-	'M+ Type-1 (general-j) Thin', sans-serif; */
 }
 
 .background {
@@ -25,7 +23,6 @@ body {
 }
 
 h1 {
-	/* font-family: 'Playfair Display', serif; */
 	font-family: 'Dancing Script', cursive;
 	color: #fff;
 	font-size: 84px;
@@ -89,13 +86,8 @@ h1 span:nth-child(13) {
 
 @keyframes blur {
 	0%		{text-shadow:  0 0 100px #fff; opacity:0.4;}
-	/* 5%		{text-shadow:  0 0 90px #fff;} */
 	15%		{opacity: 1;}
 	20%		{text-shadow:  0 0 90px #fff;}
-	/* 80%		{text-shadow:  0 0 0px #fff;} */
-	/* 85%		{opacity: 1;} */
-	/* 95%		{text-shadow:  0 0 90px #fff;} */
-	/* 100%	{text-shadow:  0 0 100px #fff; opacity:0.4;} */
 }
 
 #gallery {
@@ -202,11 +194,6 @@ h1 span:nth-child(13) {
   transform-style: preserve-3d;
 }
 
-
-/*.lightbox:hover img{
-  transform: translate(-50%, -50%) rotateY(180deg);
-}*/
-
 [class^="arrow"] {
   height: 200px;
   width: 50px;
@@ -250,7 +237,7 @@ h1 span:nth-child(13) {
   right: 0;
   width: 50px;
   height: 50px;
-  background: rgba(0, 0, 0, 0.4);
+  background: none;
   margin: 20px;
   cursor: pointer;
 }
@@ -398,3 +385,36 @@ a#scroll span:nth-of-type(3) {
     opacity: 0;
   }
 }
+
+.box{
+  width: 640px;
+  height: 400px;
+  line-height: 200px;
+  text-align: center;
+  position: relative;
+	top: 50%;
+	left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.bd div{
+  background: #fff;
+  position:absolute;
+  -webkit-transition:all 0.3s;
+  transition:all 0.3s;
+}
+
+.bd div.bdT{width: 100%; height:2px; top:0; left:0;}
+.bd div.bdB{width: 100%; height:2px; bottom:0; right:0;}
+.bd div.bdR{height:100%; width :2px; right:0; top:0;}
+.bd div.bdL{height:100%; width :2px; left:0; bottom:0;}
+
+.bd2 div{-webkit-transition:all 0.1s;transition:all 0.1s;}
+.bd2 div.bdT{transition-delay:0.3s;}
+.bd2 div.bdL{transition-delay:0.2s;}
+.bd2 div.bdB{transition-delay:0.1s;}
+.bd2 div.bdR{transition-delay:0s;}
+.active .bd2 div.bdT{width: 0;transition-delay:0s;}
+.active .bd2 div.bdL{height:0;transition-delay:0.1s;}
+.active .bd2 div.bdB{width: 0;transition-delay:0.2s;}
+.active .bd2 div.bdR{height:0;transition-delay:0.3s;}
